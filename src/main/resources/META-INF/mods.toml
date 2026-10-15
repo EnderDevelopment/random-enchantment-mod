@@ -1,0 +1,28 @@
+modLoader="javafml"
+loaderVersion="[49,)"
+license="All rights reserved"
+
+[[mods]]
+modId="randomenchantmod"
+version="${file.jarVersion}"
+displayName="Random Enchantment Mod"
+logoFile="assets/randomenchantmod/icon.png"
+credits="Jack814Keene"
+authors="Jack814Keene"
+description='''
+A mod that gives players random enchantments every 5 minutes.
+'''
+
+[[dependencies.randomenchantmod]]
+    modId="forge"
+    mandatory=true
+    versionRange="[49,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.randomenchantmod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.21.4,1.22)"
+    ordering="NONE"
+    side="BOTH"

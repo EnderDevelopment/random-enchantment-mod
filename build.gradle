@@ -1,0 +1,55 @@
+plugins {
+    id 'net.minecraftforge.gradle' version '6.0.0'
+}
+
+group 'com.jack814keene'
+version '1.0'
+
+repositories {
+    mavenCentral()
+    maven {
+        url = 'https://files.minecraftforge.net/maven'
+    }
+}
+
+ext.archivesName = "randomenchantmod-1.0.jar"
+
+forge {
+    version = '1.21.4-49.0.1'
+    runs {
+        client {
+            property 'forge.logging.markers', 'REGISTRIES'
+        }
+        server {
+            property 'forge.logging.markers', 'REGISTRIES'
+        }
+        data {
+            property 'forge.logging.markers', 'REGISTRIES'
+        }
+    }
+}
+
+dependencies {
+    implementation fg.deobf('net.minecraftforge:forge:1.21.4-49.0.1')
+    implementation fg.deobf('net.minecraft:client:1.21.4-20240116.111512')
+    implementation fg.deobf('net.minecraft:server:1.21.4-20240116.111512')
+    implementation fg.deobf('net.minecraftforge:fmlloader:1.21.4-49.0.1')
+    implementation fg.deobf('net.minecraftforge:mclanguageextensions:1.21.4-49.0.1')
+    implementation fg.deobf('net.minecraftforge:forge:1.21.4-49.0.1:userdev')
+}
+
+processResources {
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.ext.minecraft_version
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+}
